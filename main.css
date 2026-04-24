@@ -1,3 +1,139 @@
-body {
-  color: red;
+/* main color and shadows */
+:root {
+    --main-color:#eee ;
+    --secundary-color: #c7c7c7 ;
+    --blue-color: #0e9fe8 ;
+    --main-box-shadow: 0px 0px 15px 1.5px rgb(0 0 0 / 15%) ;
+    --hover-box-shadow: 0px 20px 15px 7px rgb(0 0 0 / 15%) ;
+    --card-radius: 5% ;
 }
+
+.buy {
+    width: 550px ;
+    height: 300px ;
+    position: relative ;
+    margin-left: calc(50% - 265px);
+    margin-top: 150px ;
+    text-transform: capitalize;
+}
+
+.buy::before {
+    content: "" ;
+    position: absolute ;
+    width: 2px ;
+    height: 275px ;
+    background-color: var(--blue-color);
+    top: 12.5px ;
+    left: calc(50% - 1px ) ;
+    z-index: 1 ;
+}
+
+.buy::after {
+    content: "or" ;
+    position: absolute ;
+    font-weight: bold ;
+    top: calc(50% - (35px / 2)) ;
+    left: calc(50% - (35px / 2)) ;
+    background-color: var(--blue-color) ;
+    font-size: 20px ;
+    color: white ;
+    text-transform: none ;
+    width: 25px;
+    height: 25px;
+    text-align: center ;
+    padding: 5px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    z-index: 2 ;
+}
+
+.buy .buy-basic,
+.buy .buy-pro {
+    position: absolute ;
+    width: 225px ;
+    height: 300px ;
+    background-color: #eee ;
+    display: inline-block ;
+    border-radius: var(--card-radius);
+    -webkit-border-radius: var(--card-radius);
+    -moz-border-radius: var(--card-radius);
+    -ms-border-radius: var(--card-radius);
+    -o-border-radius: var(--card-radius);
+    box-shadow: var(--main-box-shadow) ;
+    transition-property: all ;
+    transition-duration: 650ms ;
+    transition-timing-function: ease-in-out ;
+    transition-delay: 150ms ;
+}
+
+.buy .buy-basic {
+    left: 0 ;
+}
+
+.buy .buy-pro {
+    right: 0 ;
+}
+
+.buy .buy-basic:hover,
+.buy .buy-pro:hover {
+    box-shadow: var(--hover-box-shadow) ;
+    width: 230px ;
+    height: 305px ;
+    margin-top: -20px ;
+}
+
+.buy button {
+    position: absolute ;
+    display: inline-block ;
+    width: calc(225px - 100px) ;
+    border: none ;
+    background-color: var(--blue-color) ;
+    color: white ;
+    font-weight: bold ;
+    padding: 10px ;
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    cursor: pointer ;
+    top: 15px; 
+    left: calc(100px / 2) ;
+}
+
+.buy button:hover {
+    width: calc(225px - 30px);
+    left: calc(30px / 2);
+    transition-property: all ;
+    transition-duration: 800ms ;
+    transition-timing-function: ease-in-out ;
+    transition-delay: 150ms ;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.buy span {
+    position: absolute ;
+    display: inline-block ;
+    width: 50px ;
+    height: 35px ;
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+    background-color: var(--secundary-color);
+    padding: calc((150px - 35px) / 2) 50px ;
+    font-size: 30px ;
+    text-align: center ;
+    bottom: calc((225px - 150px) / 2) ;
+    left: calc((225px - 150px) / 2) ;
+}
+
+
